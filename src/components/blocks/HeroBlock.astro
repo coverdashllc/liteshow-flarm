@@ -1,26 +1,27 @@
 ---
 interface Props {
   content: {
-    title: string;
-    subtitle?: string;
+    headline: string;
+    subheadline?: string;
     ctaText?: string;
     ctaUrl?: string;
+    backgroundImage?: string;
   };
 }
 
 const { content } = Astro.props;
-const { title, subtitle, ctaText, ctaUrl } = content;
+const { headline, subheadline, ctaText, ctaUrl } = content;
 ---
 
 <section class="relative overflow-hidden bg-gradient-to-br from-blue-600 to-indigo-700 text-white py-20 lg:py-32">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
     <div class="max-w-4xl mx-auto text-center">
       <h1 class="text-4xl lg:text-6xl font-bold mb-6">
-        {title}
+        {headline}
       </h1>
-      {subtitle && (
+      {subheadline && (
         <p class="text-xl lg:text-2xl mb-8 text-blue-100">
-          {subtitle}
+          {subheadline}
         </p>
       )}
       {ctaText && ctaUrl && (
